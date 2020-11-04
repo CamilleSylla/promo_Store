@@ -19,7 +19,7 @@
 
 #topnav li {
     list-style: none;
-    font-size: 1rem;
+    font-size: 1vw;
     font-weight: 200;
 }
 
@@ -29,9 +29,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
 }
 .nav-icons img{
-    width: 4vh;
+    width: 2vw;
     cursor: pointer;
+}
+.nav-icons img:first-of-type{
+    transform: rotate(-45deg);
 }

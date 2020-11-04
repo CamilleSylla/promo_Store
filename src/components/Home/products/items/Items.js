@@ -17,10 +17,10 @@ export default function Items({toShow}) {
                             <img src={image} alt="first image" />
                         </div>
                         <div className="details">
-                            <p className="detailsName">Nom : {name}</p>
-                            <p className="brand">Marque : {brand} </p>
-                            <p className="gender">Genre : {gender}</p>
-                            <p className="price">Prix :{price}€</p>
+                            <p className="detailsName">{name}</p>
+                            <p className="brand">{brand} </p>
+                            <p className="gender">{gender}</p>
+                            <p className="price">{price}€</p>
                         </div>
                     </div>
                 )

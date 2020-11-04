@@ -13,3 +13,14 @@
 .productItem img{
     max-width: 100%;
 }
+.detailsName {
+    font-size: 1vw;
+}
+.brand {
+    font-size: 1vw;
+    font-weight: 300;
+}
+.gender {
+    font-size: 0.8vw;
+    font-weight: 300;
+}
