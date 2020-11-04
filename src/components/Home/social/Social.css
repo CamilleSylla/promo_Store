@@ -1,0 +1,40 @@
+.socialContainer {
+    width: 93%;
+    margin: 0 auto;
+    height: 35vh;
+}
+.socialTitle {
+    margin-top: 5%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../../assets/img/Social/social.jpg);
+    background-size: cover;
+    margin-bottom: 2%;
+}
+.socialLayer {
+    width: 30%;
+    padding: 1%;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+.socialImgContainer {
+    width: auto;
+    margin-left: 45%;
+    margin-right: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#socialTag {
+    margin-top: 5%;
+    font-size: 3vh;
+}
+#socialDesc {
+    font-size: 4vh;
+    text-transform: uppercase;
+    font-weight: 500;
+    background-color: none;
+}

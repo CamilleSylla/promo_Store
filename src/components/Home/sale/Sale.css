@@ -1,0 +1,48 @@
+.saleContainer {
+    width: 93%;
+    margin: 0 auto;
+    height: 60vh;
+}
+.saleTitle {
+    margin-top: 10%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../../assets/img/sale/sale.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.saleLayer {
+    width: 50%;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+#saleTag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vh;
+    font-weight: 200;
+    background-color: #A62103;
+    margin-left: 35%;
+    margin-right: 35%;
+    color: white;
+    margin-top: 5%;
+}
+#saleDesc {
+    font-size: 5vh;
+    text-transform: uppercase;
+    font-weight: 500;
+    background-color: none;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.saleLayer a{
+    text-decoration: none;
+    color:  #A62103;
+    margin-bottom: 5%;
+}

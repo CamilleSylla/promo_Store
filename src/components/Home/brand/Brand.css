@@ -1,0 +1,14 @@
+.brandContainer {
+    margin: 0 auto;
+    width: 93%;
+}
+
+.brandGrid {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.brandGrid img {
+    width: 5%;
+    
+}

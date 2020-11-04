@@ -1,0 +1,57 @@
+.banniere {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2%;
+    height: 35vh;
+}
+.banniere a {
+    margin-top: 10%;
+    text-decoration: none;
+    color: #F2F2F2;
+    border-bottom: 1px solid #F2F2F2;
+    width: 10%;
+    cursor: pointer;
+}
+#card1 {
+    background-image: url(../../../assets/img/banniere/elle.jpg);
+    background-size: cover;
+    background-position: 50% 25%;
+}
+#card2 {
+    background-image: url(../../../assets/img/banniere/accessoires.jpg);
+    background-size: cover;
+    background-position: 50% 25%;
+}
+#card3 {
+    background-image: url(../../../assets/img/banniere/lui.jpg);
+    background-size: cover;
+    background-position: 50% 25%;
+}
+
+#cardLayer1 {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(217, 148, 65, 0.6);
+    color: #F2F2F2;
+}
+#cardLayer2 {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(191, 120, 78, 0.8);
+    color: #F2F2F2;
+}
+#cardLayer3 {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(166, 69, 33, 0.7);
+    color: #F2F2F2;
+}
+
+.banniereText {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    justify-content: center;
+    text-align: left;
+    height: 100%;
+}

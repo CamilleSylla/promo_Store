@@ -1,0 +1,14 @@
+.productContainer {
+    width: 0 auto;
+    width: 93%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.itemContainer {
+    width: 0 auto;
+    width: 93%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

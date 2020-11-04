@@ -1,0 +1,26 @@
+.productMenu {
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.productMenu h6 {
+    font-size: 3vw;
+}
+.productMenu p {
+    font-size: 1vw;
+    font-weight: 200;
+    letter-spacing: 0.5vw;
+}
+.productMenu ul {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    list-style: none;
+    margin-top: 5%;
+}
+
+.productMenu li {
+    cursor: pointer;
+}

@@ -1,0 +1,73 @@
+.headerSlide {
+    position: relative;
+    margin: 0 auto;
+    width: 93%;
+    height: 80vh;
+    background-image: url(../../../assets/img/header/header.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.headerLayer {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(217, 148, 65, 0.2);
+}
+.headerGrid {
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+}
+.headerTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.headerTitle h4{
+    font-size: 3vw;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.headerTitle h5{
+    font-size: 1.5vw;
+    font-weight: 500;
+    background-color: #A62103;
+    color: white;
+    margin-top: 2%;
+    padding: 1%;
+}
+.headerTitle p{
+    font-size: 2vw;
+    font-weight: 300;
+    margin-top: 2%;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+}
+.headerTitle a{
+    margin-top: 5%;
+    font-weight: 300;
+    letter-spacing: 0.3rem;
+    color: #A62103;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1px solid #A62103;
+}
+.headerSocial {
+    width: 20%;
+    position: absolute;
+    bottom: 0;
+}
+.headerSocial ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.headerSocial li {
+    list-style: none;
+    font-size: 1vw;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 10%;
+    cursor: pointer;
+}
