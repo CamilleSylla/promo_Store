@@ -8,7 +8,7 @@ import db from './productDb'
 import './Products.css'
 
 export default function Products() {
-    const [categorie, setCategorie] = useState("male")
+    const [categorie, setCategorie] = useState("homme")
     return (
         <div>
             <div className="productContainer">

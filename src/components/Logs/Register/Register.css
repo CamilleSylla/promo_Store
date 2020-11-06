@@ -1,0 +1,15 @@
+
+.sideImg{
+    background-image: url(../../../assets/img/sale/sale.jpg);
+    background-position: center;
+}
+.registerName,
+.registerLocation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+}
+.registerName input,
+.registerLocation input{
+    width: 25%;
+}

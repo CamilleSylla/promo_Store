@@ -7,32 +7,34 @@ import Footer from './components/footer/Footer';
 import { Route, Switch } from 'react-router-dom';
 import Login from './components/Logs/Login/Login';
 import { useState } from 'react';
+import { ItemProvider } from './context/ItemContext';
+import Register from './components/Logs/Register/Register';
+import { UserProvider } from './context/UserContext';
+
+
 
 function App() {
 
-  const [global, setGlobal] = useState({
-    token:""
-  })
-  let token;
-  function tokenExist (data) {
-    setGlobal(...global, {token: data})
-  }
-  console.log(global);
   return (
+    <ItemProvider>
+      <UserProvider>
     <div className="App">
       <header>
         <Nav/>
       </header>
       <Route render={({ location }) => (
             <Switch location={location}>
-              <Route exact path='/' render={ () => (<Home token={tokenExist}/>)}/>
+              <Route exact path='/' render={ () => (<Home/>)}/>
               <Route path='/login' component={Login}/>
+              <Route path='/register' component={Register}/>
             </Switch>
       )} />
       <footer>
         <Footer/>
       </footer>
     </div>
+    </UserProvider>
+    </ItemProvider>
   );
 }
 

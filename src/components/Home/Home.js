@@ -7,6 +7,7 @@ import Sale from './sale/Sale';
 import Brand from './brand/Brand';
 import Social from './social/Social';
 import HeaderSlides from '../slides/header/HeaderSlide';
+import { ItemProvider } from '../../context/ItemContext';
 export default function Home () {
 
     return (

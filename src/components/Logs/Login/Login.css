@@ -40,10 +40,17 @@
     text-align: left;
     font-size: 1vw;
 }
+.loginForm input{
+    text-align: left;
+    font-size: 1vw;
+    font-weight: 200;
+    padding-left: 2%;
+}
 .loginForm button{
-    margin-top: 25%;
+    margin-top: 5%;
     width: 50%;
     cursor: pointer;
+    font-size: 1vw;
 }
 .loginForm .noAccount{
     text-align: right;

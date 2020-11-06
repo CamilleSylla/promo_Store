@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
-
+import { UserContext } from '../../../context/UserContext'
 
 import './Login.css'
 
 export default function Login({ token }) {
+    const [user, setUser] =  useContext(UserContext);
+
     const [login, setLogin] = useState({
         email: "",
         password: ""
@@ -21,11 +23,11 @@ export default function Login({ token }) {
 
     const onSubmit = () => {
         axios.post(`/api/user/login`, login)
-            .then(res => {
-
-                window.location.replace("/");
+            .then( async res => {
                 console.log(res.data);
-                token(res.data);
+                const data = res.data.header
+                await setUser([data]);
+                console.log(user);
             })
     }
 
