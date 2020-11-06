@@ -1,0 +1,53 @@
+.loginOverlay {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color:#F2F2F2;
+}
+.loginContainer{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.loginGrid{
+    width: 60%;
+    height: 70%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    box-shadow:10px 10px 50px  grey;
+}
+.sideImg{
+    background-image: url(../../../assets/img/female/squelette.jpg);
+    background-size: cover;
+}
+.loginForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loginFormContainer{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+.loginForm h3{
+    font-size: 3vw;
+    margin-bottom: 10%;
+}
+.loginForm p{
+    text-align: left;
+    font-size: 1vw;
+}
+.loginForm button{
+    margin-top: 25%;
+    width: 50%;
+    cursor: pointer;
+}
+.loginForm .noAccount{
+    text-align: right;
+    font-size: 0.8vw;
+    margin-top: 10%;
+    cursor: pointer;
+}
