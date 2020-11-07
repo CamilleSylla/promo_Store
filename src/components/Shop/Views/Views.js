@@ -1,23 +1,23 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
-//styles
-import './Items.css'
+
+import './Views.css'
 
 //items
-import { ItemContext } from '../../../../context/ItemContext'
+import { ItemContext } from '../../../context/ItemContext'
 
-export default function Items({ toShow }) {
-
-    const [items, setItems] = useContext(ItemContext);
+export default function Views() {
+    const [items, setItems] =  useContext(ItemContext);
+    console.log(items);
     const data = items
     let stuff;
     if (data.length === 0) {
-        console.log("loading");
+        console.log("nothing");
     } else {
         console.log(data);
         stuff = data.map((details, i) => {
             const { name, brand, gender, price, image, categorie } = details;
-            while (gender === toShow) {
+           
                 return (
                     <div id="itemCard1">
                         <div className="itemImgWrap">
@@ -31,13 +31,14 @@ export default function Items({ toShow }) {
                         </div>
                     </div>
                 )
-            }
         })
     }
+
     return (
-        <div className="productItem">
-            {stuff}
+        <div className="viewsContainer">
+            <div className="viewsGrid">
+                {stuff}
+            </div>
         </div>
     )
-
 }

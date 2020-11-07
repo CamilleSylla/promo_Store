@@ -10,6 +10,7 @@ import { useState } from 'react';
 import { ItemProvider } from './context/ItemContext';
 import Register from './components/Logs/Register/Register';
 import { UserProvider } from './context/UserContext';
+import Shop from './components/Shop/Shop';
 
 
 
@@ -27,6 +28,7 @@ function App() {
               <Route exact path='/' render={ () => (<Home/>)}/>
               <Route path='/login' component={Login}/>
               <Route path='/register' component={Register}/>
+              <Route path='/shop' component={Shop}/>
             </Switch>
       )} />
       <footer>

@@ -6,22 +6,9 @@ export const ItemContext = createContext();
 export function ItemProvider(props) {
     const [items, setItems] = useState([]);
 
-    useEffect(async () => {
-        await axios.get(`/api/publicItem`)
-            .then(res => {
-                const data = res.data;
-                for (var i = 0; i <= data.length; i++) {
-                    setItems([data]);
-                 }
-            })
-            .catch(err => {
-                    console.log(err);
-            })
-    }, []
-    )
 
     return (
-        <ItemContext.Provider value={[items]}>
+        <ItemContext.Provider value={[items, setItems]}>
             {props.children}
         </ItemContext.Provider>
     );

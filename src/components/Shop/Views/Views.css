@@ -1,0 +1,10 @@
+.viewsContainer {
+    margin: 0 auto;
+    width: 93%;
+    background-color: greenyellow;
+    height: 100%;
+}
+.viewsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
