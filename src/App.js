@@ -11,6 +11,7 @@ import { ItemProvider } from './context/ItemContext';
 import Register from './components/Logs/Register/Register';
 import { UserProvider } from './context/UserContext';
 import Shop from './components/Shop/Shop';
+import Bracket from './components/bracket/Bracket';
 
 
 
@@ -29,6 +30,7 @@ function App() {
               <Route path='/login' component={Login}/>
               <Route path='/register' component={Register}/>
               <Route path='/shop' component={Shop}/>
+              <Route path='/panier' component={Bracket}/>
             </Switch>
       )} />
       <footer>

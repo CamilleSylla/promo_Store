@@ -1,0 +1,76 @@
+.bracketContainer {
+    margin: 0 auto;
+    width: 93%;
+    text-align: center;
+}
+.bracketPageTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+}
+.bracketGrid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    width: 93%;
+    column-gap: 5%;
+}
+.bracketArticles{
+    display: flex;
+    justify-content: space-evenly;
+    box-shadow:5px 5px 50px  grey;
+}
+.bracketArticlesViews {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
+.bracketArticlesViews img{
+    width: 60%;
+}
+.bracketTitle {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.bracketTitle p:first-of-type{
+    height: 60%;
+}
+.bracketQuantity{
+    height: 100%;
+}
+.bracketQuantityFunction {
+    display: flex;
+    height: 60%;
+}
+.bracketMenu {
+    box-shadow:5px 5px 50px  grey;
+    height: 100%;
+    width: 100%;
+}
+.bracketTotal {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 80%;
+    align-items: center;
+}
+.bracketResume {
+    
+    width: 80%;
+}
+.bracketResume div{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.bracketMoney{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+.bracketResume:first-of-type {
+    overflow-y: scroll;
+    height: 30%;
+}

@@ -6,6 +6,8 @@ import Views from './Views/Views';
 
 export default function Shop () {
 
+
+    
     return (
         <div className="shopContainer">
             <div className="shopGrid">

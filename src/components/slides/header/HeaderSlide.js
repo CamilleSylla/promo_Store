@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom'
 //styles
 import './HeaderSlides.css'
 
@@ -13,7 +13,7 @@ export default function HeaderSlides () {
                         <h4>Appreciez l'automne</h4>
                         <h5>#nouvellecollection</h5>
                         <p>Nous ameliorons votre style</p>
-                        <a href=""> explorer</a>
+                        <Link to='/shop'>explorer</Link>
                     </div>
                 </div>
             <div className="headerSocial">

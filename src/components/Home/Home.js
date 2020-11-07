@@ -11,7 +11,6 @@ import HeaderSlides from '../slides/header/HeaderSlide';
 import { ItemContext } from '../../context/ItemContext'
 
 export default function Home () {
-
     const [items, setItems] =  useContext(ItemContext);
     const [user, setUser] = useState(0)
     const getItems = async () => {
