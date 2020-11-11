@@ -2,12 +2,12 @@ import React, { useContext, useEffect, useState } from 'react';
 
 
 import './Views.css'
-
+import Pic from '../../../assets/img/female/leggin.jpg';
 //items
 import { ItemContext } from '../../../context/ItemContext'
 
 export default function Views() {
-    const [items, setItems] =  useContext(ItemContext);
+    const [items, setItems] = useContext(ItemContext);
     console.log(items);
     const data = items
     let stuff;
@@ -17,20 +17,20 @@ export default function Views() {
         console.log(data);
         stuff = data.map((details, i) => {
             const { name, brand, gender, price, image, categorie } = details;
-           
-                return (
-                    <div id="itemCard1">
-                        <div className="itemImgWrap">
-                            <img src={image} alt="first image" />
-                        </div>
-                        <div className="details">
-                            <p className="detailsName">{name}</p>
-                            <p className="brand">{brand} </p>
-                            <p className="gender">{gender}</p>
-                            <p className="price">{price}€</p>
-                        </div>
+
+            return (
+            <div className="shopItemContainer">
+                    <div className="shopItemImg">
+                        <img src={image} alt={name} />
                     </div>
-                )
+                    <div className="shopDetails">
+                        <p className="detailsName">{name}</p>
+                        <p className="brand">{brand}</p>
+                        <p className="gender">{gender}</p>
+                        <p className="price">{price} €</p>
+                    </div>
+                </div>
+            )
         })
     }
 
