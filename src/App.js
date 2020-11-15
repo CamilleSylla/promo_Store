@@ -31,7 +31,6 @@ function App() {
               <Route path='/register' component={Register}/>
               <Route path='/shop' component={Shop}/>
               <Route path='/panier' component={Bracket}/>
-              <Route path='/panier' component={Bracket}/>
             </Switch>
       )} />
       <footer>

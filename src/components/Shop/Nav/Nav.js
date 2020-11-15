@@ -1,19 +1,35 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ItemContext } from '../../../context/ItemContext';
 
 import "./Nav.css"
 
-export default function ShopNav () {
+export default function ShopNav() {
+
+    const [items, setItems] = useContext(ItemContext);
+    const cat = items.map(a => a.category.toLowerCase());
+    const categoryFilter = ([...new Set(cat)]);
+    const gender = items.map(a => a.gender.toLowerCase());
+    const genderFilter = ([...new Set(gender)]);
 
     return (
         <div className="shopNavContainer">
-            <p>Filtre</p>
-            <p>Filtre</p>
-            <p>Filtre</p>
-            <p>Filtre</p>
-            <p>Filtre</p>
-            <p>Filtre</p>
-            <p>Filtre</p>
-            <p>Filtre</p>
+            <div className="shopNavFilter">
+                {categoryFilter.map((details, i) => {
+                    return (
+                        <li>
+                            {details}
+                        </li>
+                    )
+                })}
+                {genderFilter.map((details, i) => {
+                    return (
+                        <li>
+                            {details}
+                        </li>
+                    )
+                })}
+            </div>
+
         </div>
     )
 } 

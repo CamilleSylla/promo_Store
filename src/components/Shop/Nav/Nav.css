@@ -1,5 +1,12 @@
 .shopNavContainer {
-    text-align: center;
     width: 100%;
-    background-color: green;
+    display: flex;
+    justify-content: center;
+}
+.shopNavFilter{
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    list-style: none;
 }
