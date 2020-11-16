@@ -7,6 +7,15 @@
     text-align: left;
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 80%;
     list-style: none;
+}
+.shopNavContainer button{
+    width: 100%;
+    text-align: left;
+    text-transform: capitalize;
+    border: none;
+    background-color: none;
+    cursor: pointer;
+    margin-bottom: 5%;
 }

@@ -10,8 +10,8 @@ import { useState } from 'react';
 import { ItemProvider } from './context/ItemContext';
 import Register from './components/Logs/Register/Register';
 import { UserProvider } from './context/UserContext';
-import Shop from './components/Shop/Shop';
 import Bracket from './components/bracket/Bracket';
+import Shop from './components/Shop/Views/Femme/Shop';
 
 
 
