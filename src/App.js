@@ -27,9 +27,9 @@ function App() {
       <Route render={({ location }) => (
             <Switch location={location}>
               <Route exact path='/' render={ () => (<Home/>)}/>
-              <Route path='/login' component={Login}/>
+              <Route path='/login' render={ () => (<Login/>)}/>
               <Route path='/register' component={Register}/>
-              <Route path='/shop' component={Shop}/>
+              <Route exact path='/shop' render={ () => (<Shop/>)}/>
               <Route path='/panier' component={Bracket}/>
             </Switch>
       )} />

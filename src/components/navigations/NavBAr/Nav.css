@@ -5,7 +5,13 @@
     min-height: 8vh;
 }
 #navLogo {
-    height: 11vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#navLogo img{
+    height: 13vh;
     margin: 0 auto;
 }
 
@@ -17,10 +23,14 @@
     align-items: center;
 }
 
-#topnav li {
+#topnav  ul a {
+    text-decoration: none;
+    font-weight: bold;
     list-style: none;
     font-size: 1vw;
+    color: black;
     font-weight: 200;
+    transition: all ease-in-out 0.3s;
 }
 
 .nav-icons {
@@ -33,7 +43,4 @@
 .nav-icons img{
     width: 2vw;
     cursor: pointer;
-}
-.nav-icons img:first-of-type{
-    transform: rotate(-45deg);
 }

@@ -16,21 +16,24 @@ export default function Items({ toShow }) {
     } else {
         console.log(data);
         stuff = data.map((details, i) => {
-            const { name, brand, gender, price, image, categorie } = details;
-            while (gender === toShow) {
-                return (
-                    <div id="itemCard1">
-                        <div className="itemImgWrap">
-                            <img src={image} alt="first image" />
+            for (let x = 0 ;details.gender.toLowerCase().match(toShow.toLowerCase()); x++) {
+                  
+                    return (
+                        <div className="itemCard1">
+                            <div className="itemImgWrap">
+                                <img src={details.image} alt="first image" />
+                            </div>
+                            <div className="details">
+                                <p className="detailsName">{details.name}</p>
+                                <p className="brand">{details.brand} </p>
+                                <p className="gender">{details.category}</p>
+                                <p className="price">{details.price}€</p>
+                            </div>
                         </div>
-                        <div className="details">
-                            <p className="detailsName">{name}</p>
-                            <p className="brand">{brand} </p>
-                            <p className="gender">{gender}</p>
-                            <p className="price">{price}€</p>
-                        </div>
-                    </div>
-                )
+                    )
+                    console.log(details);
+                    
+                
             }
         })
     }

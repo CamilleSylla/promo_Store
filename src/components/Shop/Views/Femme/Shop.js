@@ -33,7 +33,6 @@ export default function Shop() {
                 filter={filter} 
                 setViews={setViews} 
                 genderTarget={gender}
-                gender={genderFilter} 
                 />
                 <Views item={items} filtered={views}/>
             </div>

@@ -12,6 +12,7 @@ export default function ShopNav({ cat, filter, setViews, genderTarget}) {
             })
             const newCat = newFilter.map(a => a.category.toLowerCase());
             const categoryFilter = ([...new Set(newCat)]);
+            categoryFilter.sort();
             return (
                 <div>
                     {categoryFilter.map((details, i) => {
@@ -26,6 +27,7 @@ export default function ShopNav({ cat, filter, setViews, genderTarget}) {
             )
         }
         else {
+            cat.sort();
             return (
                 <div>
                     {cat.map((details, i) => {

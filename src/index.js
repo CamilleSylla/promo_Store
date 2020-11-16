@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
@@ -7,6 +7,7 @@ import { BrowserRouter as Rooter, Route } from 'react-router-dom';
 
 ReactDOM.render(
   <Rooter>
+    <Suspense fallback={<div>Chargement...</div>}/>
     <Route path="/" component={App} />
     </Rooter>,
   document.getElementById('root')
