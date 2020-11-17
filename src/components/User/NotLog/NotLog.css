@@ -1,0 +1,21 @@
+.notLogContainer {
+    width: 93%;
+    margin: 0 auto;
+    
+}
+.notLogView {
+    width: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+.notLogView img {
+    width: 50vh;
+}
+.notLogButton {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+}

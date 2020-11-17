@@ -3,10 +3,14 @@ import axios from 'axios';
 import { UserContext } from '../../../context/UserContext'
 
 import './Login.css'
+import { TokenContext } from '../../../context/TokenContext';
+import { Link } from 'react-router-dom';
+import { IsLoggedContext } from '../../../context/IsLogged';
 
-export default function Login({ token }) {
+export default function Login() {
     const [user, setUser] =  useContext(UserContext);
-
+    const [token, setToken] = useContext(TokenContext)
+    const [log, setLog] = useContext(IsLoggedContext)
     const [login, setLogin] = useState({
         email: "",
         password: ""
@@ -23,11 +27,15 @@ export default function Login({ token }) {
 
     const onSubmit = () => {
         axios.post(`/api/user/login`, login)
-            .then( async res => {
-                console.log(res.data);
-                const data = res.data.header
-                await setUser([data]);
+            .then(async res => {
+                await setToken(res.headers.authtoken)
+                 await setUser(res.data)
+                if(res.data._id) {
+                    await setLog(true)
+                    console.log(log);
+                }
                 console.log(user);
+                console.log(token);
             })
     }
 
@@ -47,7 +55,7 @@ export default function Login({ token }) {
 
                             <p>Mot de Passe</p>
                             <input onChange={passwordChange} />
-                            <button onClick={onSubmit}> Connection</button>
+                            <Link to="/" onClick={onSubmit}>Connection</Link>
 
                             <a className="noAccount">
                                 Pas encore de compte ? Cliquez ici !

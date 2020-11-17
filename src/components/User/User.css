@@ -1,0 +1,27 @@
+.userContainer {
+    width: 93%;
+    margin: 0 auto;
+}
+.userGrid {
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(2, 1fr);
+}
+.userTitle {
+    grid-row: 1;
+    grid-column: span 2;
+    text-align: right;
+    font-size: 3vw;
+}
+.userTitle p{
+    font-size: 1vw;
+}
+.userInfos {
+    grid-row: 2;
+}
+.userInfos p{
+    display: flex;
+}
+.userOrders {
+    grid-row: 2;
+}

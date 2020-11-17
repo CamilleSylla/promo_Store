@@ -12,7 +12,9 @@ import Register from './components/Logs/Register/Register';
 import { UserProvider } from './context/UserContext';
 import Bracket from './components/bracket/Bracket';
 import Shop from './components/Shop/Views/Femme/Shop';
-
+import User from './components/User/User'
+import { TokenProvider } from './context/TokenContext';
+import { IsLoggedProvider } from './context/IsLogged';
 
 
 function App() {
@@ -20,24 +22,29 @@ function App() {
   return (
     <ItemProvider>
       <UserProvider>
-    <div className="App">
-      <header>
-        <Nav/>
-      </header>
-      <Route render={({ location }) => (
-            <Switch location={location}>
-              <Route exact path='/' render={ () => (<Home/>)}/>
-              <Route path='/login' render={ () => (<Login/>)}/>
-              <Route path='/register' component={Register}/>
-              <Route exact path='/shop' render={ () => (<Shop/>)}/>
-              <Route path='/panier' component={Bracket}/>
-            </Switch>
-      )} />
-      <footer>
-        <Footer/>
-      </footer>
-    </div>
-    </UserProvider>
+        <TokenProvider>
+          <IsLoggedProvider>
+          <div className="App">
+            <header>
+              <Nav />
+            </header>
+            <Route render={({ location }) => (
+              <Switch location={location}>
+                <Route exact path='/' render={() => (<Home />)} />
+                <Route path='/login' render={() => (<Login />)} />
+                <Route path='/register' component={Register} />
+                <Route exact path='/shop' render={() => (<Shop />)} />
+                <Route path='/panier' component={Bracket} />
+                <Route path='/user' component={User} />
+              </Switch>
+            )} />
+            <footer>
+              <Footer />
+            </footer>
+          </div>
+          </IsLoggedProvider>
+        </TokenProvider>
+      </UserProvider>
     </ItemProvider>
   );
 }

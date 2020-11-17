@@ -15,20 +15,19 @@ export default function Nav() {
 
     const checkActive = (match, location) => {
         //some additional logic to verify you are in the home URI
-        if(!location) return false;
-        const {pathname} = location;
-        console.log(pathname);
+        if (!location) return false;
+        const { pathname } = location;
         return pathname === "/";
     }
     return (
         <nav id="topnav">
-            <Link id='navLogo'to="/">
-            <img src={ID} alt="logo"  />
+            <Link id='navLogo' to="/">
+                <img src={ID} alt="logo" />
             </Link>
             <ul>
-                
+
                 <NavLink
-                isActive={checkActive}
+                    isActive={checkActive}
                     to="/"
                     activeStyle={{
                         color: "red"
@@ -63,8 +62,11 @@ export default function Nav() {
                 </NavLink>
             </ul>
             <div className="nav-icons">
+
                 <img src={Search} alt="icons" />
-                <img src={Man} alt="icons" />
+                <Link to='/user'>
+                    <img src={Man} alt="icons" />
+                </Link>
                 <img src={Cart} alt="icons" />
             </div>
         </nav>
