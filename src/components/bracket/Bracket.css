@@ -14,38 +14,38 @@
     grid-template-columns: 2fr 1fr;
     width: 93%;
     column-gap: 5%;
+    row-gap: 5%;
+    margin-bottom: 25vh;
 }
 .bracketArticles{
     display: flex;
-    justify-content: space-evenly;
+    grid-column: 1;
     box-shadow:5px 5px 50px  grey;
+    height: 30vh;
 }
 .bracketArticlesViews {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40%;
+    max-width: 20vw;
 }
 .bracketArticlesViews img{
-    width: 60%;
+    width: 100%;
+    object-fit: contain;
+}
+.bracketSpacing {
+    display: flex;
+    width: 100%;
+    text-align: left;
+    align-items: center;
 }
 .bracketTitle {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-.bracketTitle p:first-of-type{
-    height: 60%;
-}
-.bracketQuantity{
-    height: 100%;
+    width: 50%;
 }
 .bracketQuantityFunction {
     display: flex;
-    height: 60%;
 }
 .bracketMenu {
-    box-shadow:5px 5px 50px  grey;
+    grid-row: 1;
+    grid-column: 2;
     height: 100%;
     width: 100%;
 }
@@ -55,6 +55,7 @@
     width: 100%;
     height: 80%;
     align-items: center;
+    grid-row: 1;
 }
 .bracketResume {
     

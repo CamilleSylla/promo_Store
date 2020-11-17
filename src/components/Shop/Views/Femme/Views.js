@@ -30,11 +30,20 @@ export default function Views({ item, filtered }) {
                             <img src={details.image} alt={details.name} />
                         </div>
                         <div className="shopDetails">
-                            <p className="detailsName">{details.name}</p>
-                            <p className="brand">{details.category}</p>
-                            <p className="gender">{details.gender}</p>
-                            <p className="price">{details.price} €</p>
-                            <button onClick={userTarget} value={details._id}>Inspecter</button>
+                        <div className="shopInfos">
+                                <p className="detailsName">{details.name}</p>
+                                <p className="brand">{details.category}</p>
+                                <p className="gender">{details.gender}</p>
+                                <p className="price">{details.price} €</p>
+                            </div>
+                            <div className="shopItemOverview">
+                                <Link to="/overview">
+                                    <input type="image" src={Eye} alt="overview" onClick={userTarget} value={details._id} />
+                                </Link>
+
+                                <input type="image" src={Cart} alt="overview" />
+                            </div>
+                            
                         </div>
                     </div>
                 )

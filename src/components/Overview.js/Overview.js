@@ -9,7 +9,7 @@ export default function Overview() {
     const [target, setTarget] = useContext(OverviewContext)
     const addToCart = () => {
         target.map((details, i) => {
-                setBracket([...bracket, {details}])
+                setBracket([...bracket, details])
                 console.log(bracket);
         })
     }
