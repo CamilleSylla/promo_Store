@@ -1,0 +1,18 @@
+.overviewContainer {
+    margin: 0 auto;
+    width: 93%;
+    overflow: hidden;
+}
+.overviewGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+.overviewGrid img {
+    grid-column: 2;
+    max-width: 100%;
+}
+.overviewItemInfo {
+grid-column: 4;
+text-align: right;
+position: relative;
+}

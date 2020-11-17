@@ -15,6 +15,9 @@ import Shop from './components/Shop/Views/Femme/Shop';
 import User from './components/User/User'
 import { TokenProvider } from './context/TokenContext';
 import { IsLoggedProvider } from './context/IsLogged';
+import Overview from './components/Overview.js/Overview';
+import { OverviewProvider } from './context/OverviewContext';
+import { BracketProvider } from './context/BrackContext';
 
 
 function App() {
@@ -24,24 +27,29 @@ function App() {
       <UserProvider>
         <TokenProvider>
           <IsLoggedProvider>
-          <div className="App">
-            <header>
-              <Nav />
-            </header>
-            <Route render={({ location }) => (
-              <Switch location={location}>
-                <Route exact path='/' render={() => (<Home />)} />
-                <Route path='/login' render={() => (<Login />)} />
-                <Route path='/register' component={Register} />
-                <Route exact path='/shop' render={() => (<Shop />)} />
-                <Route path='/panier' component={Bracket} />
-                <Route path='/user' component={User} />
-              </Switch>
-            )} />
-            <footer>
-              <Footer />
-            </footer>
-          </div>
+            <OverviewProvider>
+              <BracketProvider>
+              <div className="App">
+                <header>
+                  <Nav />
+                </header>
+                <Route render={({ location }) => (
+                  <Switch location={location}>
+                    <Route exact path='/' render={() => (<Home />)} />
+                    <Route path='/login' render={() => (<Login />)} />
+                    <Route path='/register' component={Register} />
+                    <Route exact path='/shop' render={() => (<Shop />)} />
+                    <Route path='/panier' component={Bracket} />
+                    <Route path='/user' component={User} />
+                    <Route path='/overview' component={Overview} />
+                  </Switch>
+                )} />
+                <footer>
+                  <Footer />
+                </footer>
+              </div>
+              </BracketProvider>
+            </OverviewProvider>
           </IsLoggedProvider>
         </TokenProvider>
       </UserProvider>
