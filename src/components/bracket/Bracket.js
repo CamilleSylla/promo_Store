@@ -14,7 +14,6 @@ export default function Bracket() {
         return bracket.reduce((acc, obj) => acc + obj.price, 0)
     }
     function items() {
-        if (log === true) {
             return bracket.map((details, i) => {
                 return (
 
@@ -38,10 +37,8 @@ export default function Bracket() {
                     </div>
                 )
             })
-        }
     }
     function order() {
-        if (log === true) {
             return bracket.map((details, i) => {
                 return (
                     <div>
@@ -50,7 +47,6 @@ export default function Bracket() {
                     </div>
                 )
             })
-        }
     }
     return (
         <div className="bracketContainer">

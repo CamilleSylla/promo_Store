@@ -54,15 +54,6 @@ export default function Nav() {
                     Collection
                 </NavLink>
                 <NavLink
-                    to="/shop"
-                    activeStyle={{
-                        color: "red"
-                    }}
-                >
-                    Accessoires
-                </NavLink>
-
-                <NavLink
                     to="/apropos"
                     activeStyle={{
                         color: "red"

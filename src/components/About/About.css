@@ -1,0 +1,132 @@
+.aboutContainer {
+    margin: 0 auto;
+    width: 93%;
+}
+.aboutTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.aboutTitle h1 {
+    display: flex;
+    align-items: center;
+    height: 25vh;
+    text-align: center;
+    width: 50%;
+}
+.aboutTitle p:nth-of-type(2) {
+    width: 40%;
+    font-weight: 200;
+    display: flex;
+    height: 25vh;
+    align-items: center;
+    text-align: center;
+}
+.aboutImageGridContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.aboutImageGrid{
+    width: 75%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 5%;
+}
+.aboutImageGrid img {
+    max-width: 100%;
+}
+.aboutImageGrid img:nth-of-type(3) {
+    max-width: 100%;
+}
+.aboutImgContainer {
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+}
+.aboutMiddleware{
+    margin-top: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.aboutMiddleware p{
+    width: 50%;
+    text-align: center;
+    font-weight: 200;
+}
+.aboutText {
+    margin-top: 15vh;
+    display: flex;
+    justify-content: center;
+    height: 60vh;
+}
+.aboutTextGrid {
+    display: grid;
+    width: 70%;
+    grid-template-columns: repeat(2, 1fr);
+}
+.aboutTextImg {
+    display: flex;
+}
+.aboutTextGrid img {
+    width: 100%;
+    object-fit: cover;
+}
+.img1{
+    width: 100%;
+    max-height: 25vh;
+    object-fit: cover;
+    border-top-left-radius: 40px;
+}
+.img2{
+    width: 100%;
+    max-height: 25vh;
+    object-fit: cover;
+    border-bottom-right-radius: 40px;
+}
+.aboutDescContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: left;
+}
+.aboutDesc {
+    width: 60%;
+}
+.aboutDesc p{
+    font-weight: 200;
+}
+.aboutContactContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.aboutContactContainer h6{
+    font-size: 3vw;
+    grid-column: span 2;
+    margin-bottom: 5vh;
+}
+.aboutContactGrid {
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.aboutLabels1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 20vh;
+}
+.aboutLabels1 input{
+    margin-bottom: 5%;
+}
+.aboutLabels2 {
+    display: flex;
+    flex-direction: column;
+}
+.aboutLabels2 textarea{
+    height: 20vh;
+}

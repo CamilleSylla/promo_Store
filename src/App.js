@@ -18,6 +18,7 @@ import { IsLoggedProvider } from './context/IsLogged';
 import Overview from './components/Overview.js/Overview';
 import { OverviewProvider } from './context/OverviewContext';
 import { BracketProvider } from './context/BrackContext';
+import About from './components/About/About';
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
                     <Route path='/panier' component={Bracket} />
                     <Route path='/user' component={User} />
                     <Route path='/overview' component={Overview} />
+                    <Route path='/apropos' component={About} />
                   </Switch>
                 )} />
                 <footer>
