@@ -62,8 +62,11 @@ export default function ShopNav({ cat, filter, setViews, genderTarget}) {
     }
     return (
         <div className="shopNavContainer">
+            
             <div className="shopNavFilter">
+            <h2>Categories</h2>
                 {showFilter()}
+            <h2>Marques</h2>
             </div>
 
         </div>

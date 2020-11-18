@@ -109,6 +109,16 @@
     grid-column: span 2;
     margin-bottom: 5vh;
 }
+.aboutContactIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.aboutContactIcon img{
+    height: 20vh;
+    margin-bottom: 10vh;
+    margin-top: 10vh;
+}
 .aboutContactGrid {
     width: 60%;
     display: grid;
@@ -122,6 +132,11 @@
 }
 .aboutLabels1 input{
     margin-bottom: 5%;
+    border: none;
+    height: 5vh;
+    background-color: transparent;
+    border-bottom: 1px solid black;
+    width: 70%;
 }
 .aboutLabels2 {
     display: flex;
@@ -129,4 +144,15 @@
 }
 .aboutLabels2 textarea{
     height: 20vh;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid black;
+    font-weight: 200;
+
+}
+.contactSendButton {
+    margin-top: 5vh;
+    width: 40%;
+    height: 5vh;
+    text-transform: capitalize;
 }

@@ -5,7 +5,6 @@ import { OverviewContext } from '../../../../context/OverviewContext';
 
 //assets
 import Eye from '../../../../assets/Icons/eye.svg'
-import Cart from '../../../../assets/Icons/cart.svg'
 import { Link } from 'react-router-dom';
 
 export default function Views({ item, filtered }) {
@@ -25,6 +24,7 @@ export default function Views({ item, filtered }) {
             return filtered.map((details, i) => {
                 return (
                     <div className="shopItemContainer" >
+                        
                         <div className="shopItemImg">
                             <img src={details.image} alt={details.name} />
                         </div>
@@ -39,9 +39,7 @@ export default function Views({ item, filtered }) {
                                 <Link to="/overview">
                                     <input type="image" src={Eye} alt="overview" onClick={userTarget} value={details._id} />
                                 </Link>
-
-                                <input type="image" src={Cart} alt="overview" />
-                            </div>
+                                </div>
                             
                         </div>
                     </div>
@@ -66,8 +64,6 @@ export default function Views({ item, filtered }) {
                                 <Link to="/overview">
                                     <input type="image" src={Eye} alt="overview" onClick={userTarget} value={details._id} />
                                 </Link>
-
-                                <input type="image" src={Cart} alt="overview" />
                             </div>
                         </div>
                     </div>

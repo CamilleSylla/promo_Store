@@ -9,10 +9,11 @@ import Deliver from '../../assets/img/About/Deliver.svg'
 import Way from '../../assets/img/About/Way.svg'
 import Glasses from '../../assets/img/About/Glasses.jpg'
 import Pose from '../../assets/img/About/Pose.jpg'
+import Mail from '../../assets/Icons/About/email.svg'
 import Axios from 'axios';
 export default function About() {
 
-    const [msg , setMsg] = useState({
+    const [msg, setMsg] = useState({
         name: "",
         email: "",
         sujet: "",
@@ -20,23 +21,23 @@ export default function About() {
     })
 
     const nameChange = (e) => {
-        setMsg({...msg, name: e.target.value})
+        setMsg({ ...msg, name: e.target.value })
     }
     const emailChange = (e) => {
-        setMsg({...msg, email: e.target.value})
+        setMsg({ ...msg, email: e.target.value })
     }
     const sujetChange = (e) => {
-        setMsg({...msg, sujet: e.target.value})
+        setMsg({ ...msg, sujet: e.target.value })
     }
     const textChange = (e) => {
-        setMsg({...msg, content: e.target.value})
+        setMsg({ ...msg, content: e.target.value })
     }
-    
-    function Send () {
+
+    function Send() {
         Axios.post(`/api/mail`, msg)
-        .then(res => {
-            console.log(res);
-        })
+            .then(res => {
+                console.log(res);
+            })
     }
     return (
         <div className="aboutContainer">
@@ -113,18 +114,22 @@ export default function About() {
                     </div>
                 </div>
             </div>
+            <div className="aboutContactIcon">
+                <img src={Mail} alt="Mail" />
+            </div>
             <div className="aboutContactContainer">
+
                 <div className="aboutContactGrid">
                     <h6>Nous contacter :</h6>
                     <div className="aboutLabels1">
-                        <input type="text" placeholder="Nom Prénom" onChange={nameChange}/>
-                        <input type="email" placeholder="E-mail" onChange={emailChange}/>
-                        <input type="text" placeholder="Sujet" onChange={sujetChange}/>
+                        <input type="text" placeholder="Nom Prénom" onChange={nameChange} />
+                        <input type="email" placeholder="E-mail" onChange={emailChange} />
+                        <input type="text" placeholder="Sujet" onChange={sujetChange} />
                     </div>
                     <div className="aboutLabels2">
                         <textarea placeholder="Votre message" onChange={textChange}></textarea>
                     </div>
-                    <input type="button" value="envoyer" onClick={Send}/>
+                    <input className="contactSendButton" type="button" value="envoyer" onClick={Send} />
 
                 </div>
             </div>

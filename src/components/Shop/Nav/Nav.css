@@ -9,13 +9,14 @@
     flex-direction: column;
     width: 80%;
     list-style: none;
+    border-right:1px solid black ;
 }
 .shopNavContainer button{
     width: 100%;
     text-align: left;
     text-transform: capitalize;
     border: none;
-    background-color: none;
+    background-color: transparent;
     cursor: pointer;
     margin-bottom: 5%;
 }

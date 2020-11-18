@@ -20,6 +20,7 @@ export default function Shop() {
 
     return (
         <div className="shopContainer">
+            <div className="shopGrid">
             <GenderNav 
             gender={genderFilter} 
             filter={filter} 
@@ -27,6 +28,8 @@ export default function Shop() {
             genderTarget={gender}
             setGender={setGender}
             />
+            </div>
+            
             <div className="shopGrid">
                 <ShopNav 
                 cat={categoryFilter} 
