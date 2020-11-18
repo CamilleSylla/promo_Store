@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 
 import './Bracket.css';
 
@@ -6,6 +6,7 @@ import Articles from '../../assets/img/female/leggin.jpg'
 import { IsLoggedContext } from '../../context/IsLogged';
 import NotLog from '../User/NotLog/NotLog';
 import { BracketContext } from '../../context/BrackContext'
+import Paypal from '../Paypal/Paypal';
 export default function Bracket() {
     const [log, setLog] = useContext(IsLoggedContext);
     const [bracket, setBracket] = useContext(BracketContext)
@@ -14,65 +15,66 @@ export default function Bracket() {
         return bracket.reduce((acc, obj) => acc + obj.price, 0)
     }
     function items() {
-            return bracket.map((details, i) => {
-                return (
+        return bracket.map((details, i) => {
+            return (
 
-                    <div className="bracketArticles">
-                        <div className="bracketArticlesViews">
-                            <img src={details.image} alt="articles" />
-                        </div>
-                        <div className="bracketSpacing">
-                            <div className="bracketTitle">
-                                <p>{details.name}</p>
-                                <p>Size </p>
-                                <button>Remove</button>
-                                <div className="bracketQuantityFunction">
-                                    <p>-</p>
-                                    <p>Number</p>
-                                    <p>+</p>
-                                </div>
-                                <p> {details.price} €</p>
+                <div className="bracketArticles">
+                    <div className="bracketArticlesViews">
+                        <img src={details.image} alt="articles" />
+                    </div>
+                    <div className="bracketSpacing">
+                        <div className="bracketTitle">
+                            <p>{details.name}</p>
+                            <p>Size </p>
+                            <button>Remove</button>
+                            <div className="bracketQuantityFunction">
+                                <p>-</p>
+                                <p>Number</p>
+                                <p>+</p>
                             </div>
+                            <p> {details.price} €</p>
                         </div>
                     </div>
-                )
-            })
-    }
-    function order() {
-            return bracket.map((details, i) => {
-                return (
-                    <div>
-                        <p>{details.name}</p>
-                        <p>{details.price} €</p>
-                    </div>
-                )
-            })
-    }
-    return (
-        <div className="bracketContainer">
-            <div className="bracketPageTitle">
-                <p>#monpanier</p>
-            </div>
-            <div className="bracketGrid">
-                {items()}
-                <div className="bracketMenu">
-                    <p> Montant total de votre panier</p>
-                    <div className="bracketTotal">
-                        <div className="bracketResume">
-                            {order()}
-                        </div>
-                        <div className="bracketMoney">
-                            <p>Montant TTC (TVA 20%)</p>
-                            <p>{Amount()} €</p>
-                        </div>
-                        <div className="bracketPaymets">
 
-                        </div>
+                </div >
+            )
+    })
+}
+function order() {
+    return bracket.map((details, i) => {
+        return (
+            <div>
+                <p>{details.name}</p>
+                <p>{details.price} €</p>
+            </div>
+        )
+    })
+}
+return (
+    <div className="bracketContainer">
+        <div className="bracketPageTitle">
+            <p>#monpanier</p>
+        </div>
+        <div className="bracketGrid">
+            {items()}
+            <div className="bracketMenu">
+                <p> Montant total de votre panier</p>
+                <div className="bracketTotal">
+                    <div className="bracketResume">
+                        {order()}
                     </div>
+                    <div className="bracketMoney">
+                        <p>Montant TTC (TVA 20%)</p>
+                        <p>{Amount()} €</p>
+                    </div>
+                    <div className="bracketPaypal">
+                        <Paypal price={Amount}/>
+                </div >
                 </div>
             </div>
         </div>
-    )
+    </div>
+)
 }
 
 

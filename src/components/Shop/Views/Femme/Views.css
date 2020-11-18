@@ -27,9 +27,12 @@
 }
 .shopInfos {
     display: flex;
-    width: 100%;
+    width: 95%;
     text-align: left;
     flex-direction: column;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 .shopItemOverview input{
     max-width: 100%;

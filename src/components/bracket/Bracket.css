@@ -20,7 +20,6 @@
 .bracketArticles{
     display: flex;
     grid-column: 1;
-    box-shadow:5px 5px 50px  grey;
     height: 30vh;
 }
 .bracketArticlesViews {

@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import './Views.css'
 //items
-import { ItemContext } from '../../../../context/ItemContext'
 import { OverviewContext } from '../../../../context/OverviewContext';
 
 //assets
