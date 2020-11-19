@@ -40,6 +40,8 @@ export default function Shop() {
                 setViews={setViews} 
                 genderTarget={gender}
                 brand={brandsFilter}
+                Brand={brand}
+                setBrand={setBrand}
                 />
                 <Views item={items} filtered={views}/>
             </div>

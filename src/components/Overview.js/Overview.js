@@ -9,25 +9,50 @@ export default function Overview() {
     const [target, setTarget] = useContext(OverviewContext)
     const addToCart = () => {
         target.map((details, i) => {
-                setBracket([...bracket, details])
-                console.log(bracket);
+            setBracket([...bracket, details])
+            console.log(bracket);
         })
     }
     return (
         <div className="overviewContainer">
             {target.map((details, i) => {
+                    console.log(details);
+                function Sizes () {
+                    if(details.sizes) {
+                        const Sizes = details.sizes.map((sizes, i) => {
+                            const newSizes = [sizes.s, sizes.m, sizes.l, sizes.xl]
+                            const sizesQuantity = newSizes.map((quantity, i) => {
+                                if (quantity > 0) {
+                                    const Tailles = ["S", "M", "L", "XL" ]
+                                    return (
+                                        <div className="sizesContainer">
+                                            <p>{Tailles[i]} : {quantity}</p>
+                                            </div>
+                                    )
+                                }
+                            })
+                            return sizesQuantity
+                        })
+                        return Sizes
+                    }
+                }
+                
+
                 return (
                     <div className="overviewGrid">
                         <img src={details.image} alt={details.name} />
                         <div className="overviewItemInfo">
                             <h1>{details.name}</h1>
-                            <h2>{details.category}</h2>
+                            <h2>{details.brand}</h2>
+                            <h3>{details.category}</h3>
                             <h4> {details.gender} </h4>
                             <p> {details.price} € </p>
-                            <input 
-                            type="button" 
-                            value="Ajouter au Panier"
-                            onClick={addToCart}
+                            <p> Tailles en stock :</p>
+                            {Sizes()}
+                            <input
+                                type="button"
+                                value="Ajouter au Panier"
+                                onClick={addToCart}
                             />
                         </div>
                     </div>

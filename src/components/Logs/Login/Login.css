@@ -58,3 +58,14 @@
     margin-top: 10%;
     cursor: pointer;
 }
+.loginField {
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid black;
+    margin-bottom: 5vh;
+}
+
+.loginConnection {
+    text-align: center;
+    width: 10vw;
+}

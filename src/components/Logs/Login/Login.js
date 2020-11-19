@@ -51,15 +51,21 @@ export default function Login() {
                         <div className="loginFormContainer">
                             <h3> Connection </h3>
                             <p>Email</p>
-                            <input onChange={emailChange} />
+                            <input className="loginField" onChange={emailChange} />
 
                             <p>Mot de Passe</p>
-                            <input onChange={passwordChange} />
-                            <Link to="/" onClick={onSubmit}>Connection</Link>
+                            <input className="loginField" onChange={passwordChange} />
+                            <Link to="/" >
+                                <input 
+                                className="loginConnection" 
+                                type="button" 
+                                onClick={onSubmit} 
+                                value="Connection"/>
+                            </Link>
 
-                            <a className="noAccount">
+                            <Link to="/register" className="noAccount">
                                 Pas encore de compte ? Cliquez ici !
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

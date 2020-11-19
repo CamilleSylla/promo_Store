@@ -3,6 +3,7 @@ import axios from 'axios';
 
 
 import './Register.css'
+import { Link } from 'react-router-dom';
 
 export default function Register() {
     const [register, setRegister] = useState({
@@ -60,28 +61,34 @@ export default function Register() {
                             <h3> Inscription </h3>
                             <div className="registerName">
                                 <p>Nom :</p>
-                                <input onChange={nomChange} />
+                                <input className="registerField" onChange={nomChange} />
 
                                 <p>Prénom :</p>
-                                <input onChange={prenomChange} />
+                                <input className="registerField" onChange={prenomChange} />
                             </div>
 
 
                             <p>Adresse :</p>
-                            <input onChange={adresseChange} />
+                            <input className="registerField" onChange={adresseChange} />
                             
                             <p>Ville :</p>
-                            <input onChange={villeChange} />
+                            <input className="registerField" onChange={villeChange} />
 
                             <p>Sexe:</p>
-                            <input onChange={sexeChange} />
+                            <input className="registerField" onChange={sexeChange} />
 
                             <p>Email</p>
-                            <input onChange={emailChange} />
+                            <input className="registerField" onChange={emailChange} />
 
                             <p>Mot de Passe</p>
-                            <input onChange={passwordChange} />
-                            <button onClick={onSubmit}>M'inscrire</button>
+                            <input className="registerField" onChange={passwordChange} />
+                            <Link to="/" >
+                                <input 
+                                className="loginConnection" 
+                                type="button" 
+                                onClick={onSubmit} 
+                                value="M'enregister"/>
+                            </Link>
                             <a className="noAccount">
                                 Déjà un compte ? Cliquez ici !
                             </a>

@@ -13,3 +13,13 @@
 .registerLocation input{
     width: 25%;
 }
+
+.registerField {
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid black;
+}
+
+.registerField:nth-of-type(5) {
+    margin-bottom: 5vh;
+}

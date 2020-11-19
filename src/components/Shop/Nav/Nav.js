@@ -27,7 +27,7 @@ export default function ShopNav({ cat, filter, setViews, genderTarget, brand }) 
         if (genderTarget.target) {
             const stuff = filter.filter((i) => {
                 return i.brand.toLowerCase().match(e.target.value.toLowerCase())
-                    && i.gender.toLowerCase().match(genderTarget.target.toLowerCase())
+                    && i.gender.toLowerCase().match(genderTarget.target.toLowerCase()) 
             })
             setViews(stuff)
         } else {
@@ -87,7 +87,7 @@ export default function ShopNav({ cat, filter, setViews, genderTarget, brand }) 
                 <div>
                     {categoryFilter.map((details, i) => {
                         return (
-                            <button onClick={Category} value={details}>
+                            <button onClick={Brand} value={details}>
                                 {details}
                             </button>
                         )
