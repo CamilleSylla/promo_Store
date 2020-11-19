@@ -15,27 +15,29 @@ export default function Items({ toShow }) {
         console.log("loading");
     } else {
         console.log(data);
-        stuff = data.map((details, i) => {
-            for (let x = 0 ;details.gender.toLowerCase().match(toShow.toLowerCase()); x++) {
-                  
-                    return (
-                        <div className="itemCard1">
-                            <div className="itemImgWrap">
-                                <img src={details.image} alt="first image" />
-                            </div>
-                            <div className="details">
-                                <p className="detailsName">{details.name}</p>
-                                <p className="brand">{details.brand} </p>
-                                <p className="gender">{details.category}</p>
-                                <p className="price">{details.price}€</p>
-                            </div>
+        const filter = data.filter((i) => {
+            return i.gender.toLowerCase().match(toShow.toLowerCase())
+        })
+        
+
+        stuff = filter.map((details, i) => {
+            while (i <= 2) {
+                return (
+                    <div className="itemCard1">
+                        <div className="itemImgWrap">
+                            <img src={details.image} alt="first image" />
                         </div>
-                    )
-                    console.log(details);
-                    
-                
+                        <div className="details">
+                            <p className="detailsName">{details.name}</p>
+                            <p className="brand">{details.brand} </p>
+                            <p className="gender">{details.category}</p>
+                            <p className="price">{details.price}€</p>
+                        </div>
+                    </div>
+                )
             }
         })
+
     }
     return (
         <div className="productItem">

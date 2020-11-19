@@ -28,6 +28,9 @@
     justify-content: center;
     align-items: center;
 }
+.socialImgContainer img{
+    max-width: 100%;
+}
 #socialTag {
     margin-top: 5%;
     font-size: 1.5vw;
