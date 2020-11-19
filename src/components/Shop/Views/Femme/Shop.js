@@ -9,6 +9,7 @@ export default function Shop() {
     const [items, setItems] = useContext(ItemContext);
     const [views, setViews] = useState([])
     const [gender, setGender] = useState([])
+    const [brand, setBrand] = useState([])
     const filter = items
 
     
@@ -17,6 +18,8 @@ export default function Shop() {
     const categoryFilter = ([...new Set(cat)]);
     const genre = items.map(a => a.gender.toLowerCase());
     const genderFilter = ([...new Set(genre)]);
+    const brands =  items.map(a => a.brand.toLowerCase());
+    const brandsFilter = ([...new Set(brands)]);
 
     return (
         <div className="shopContainer">
@@ -36,6 +39,7 @@ export default function Shop() {
                 filter={filter} 
                 setViews={setViews} 
                 genderTarget={gender}
+                brand={brandsFilter}
                 />
                 <Views item={items} filtered={views}/>
             </div>

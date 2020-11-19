@@ -2,7 +2,6 @@
     margin: 0 auto;
     width: 93%;
     overflow: hidden;
-    border-bottom: 1px solid black;
 }
 .viewsGrid {
     display: grid;
@@ -14,7 +13,7 @@
     width: 100%;
 }
 .shopItemImg {
-    min-height: 80%;
+    height: 80%;
     display: flex;
 }
 .shopItemImg img{
