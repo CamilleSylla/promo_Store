@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { BracketContext } from '../../context/BrackContext';
 import { OverviewContext } from '../../context/OverviewContext';
 
@@ -7,36 +7,36 @@ import './Overview.css'
 export default function Overview() {
     const [bracket, setBracket] = useContext(BracketContext)
     const [target, setTarget] = useContext(OverviewContext)
+
     const addToCart = () => {
         target.map((details, i) => {
             setBracket([...bracket, details])
             console.log(bracket);
         })
     }
+
+
     return (
         <div className="overviewContainer">
             {target.map((details, i) => {
-                    console.log(details);
+                console.log(details);
                 function Sizes () {
-                    if(details.sizes) {
-                        const Sizes = details.sizes.map((sizes, i) => {
-                            const newSizes = [sizes.s, sizes.m, sizes.l, sizes.xl]
-                            const sizesQuantity = newSizes.map((quantity, i) => {
-                                if (quantity > 0) {
-                                    const Tailles = ["S", "M", "L", "XL" ]
-                                    return (
-                                        <div className="sizesContainer">
-                                            <p>{Tailles[i]} : {quantity}</p>
-                                            </div>
-                                    )
-                                }
-                            })
-                            return sizesQuantity
-                        })
-                        return Sizes
-                    }
+                    const newSizes = [details.s, details.m, details.l, details.xl]
+                    const sizesQuantity = newSizes.map((quantity, i) => {
+                        if (quantity > 0) {
+                            const Tailles = ["S", "M", "L", "XL"]
+                            return (
+                                <div className="sizesContainer">
+                                    <p>
+                                        {Tailles[i]} : {quantity}
+                                    </p>
+                                </div>
+                            )
+                        }
+                    })
+                    return sizesQuantity
                 }
-                
+                            
 
                 return (
                     <div className="overviewGrid">
