@@ -8,75 +8,123 @@ import Paypal from '../Paypal/Paypal';
 export default function Bracket() {
     const [log, setLog] = useContext(IsLoggedContext);
     const [bracket, setBracket] = useContext(BracketContext)
-    const [sizes, setSizes] = useState({
-        s: 0,
-        m: 0,
-        l: 0,
-        xl: 0,
-    })
-    let Order;
-    console.log(bracket);
+    const [finalOrder, setFinalOrder] = useState([])
+
+
     const Amount = () => {
-        const multiply = sizes.s + sizes.m + sizes.l + sizes.xl
-        console.log(multiply);
-        return bracket.reduce((acc, obj) => acc + obj.price*multiply,0)
+        return bracket.reduce((acc, obj) => acc + obj.price, 0)
     }
+
+
     function items() {
         return bracket.map((details, i) => {
-            const addS = () => {
-                setSizes({...sizes, s: sizes.s +1 })
+            const sizeEvent = (e) => {
+                console.log(e.target.id);
+                if (finalOrder.length > 0 ) {
+                    const found = finalOrder.find(target => target._id === e.target.id)
+                    console.log(found);
+                    if (found === undefined) {
+                        bracket.forEach(item => {
+                            if (e.target.id === item._id) {
+                                setFinalOrder([
+                                    ...finalOrder,{
+                                        _id: item._id,
+                                        name: item.name,
+                                        size: e.target.value,
+                                        quantity: ""}
+                                ])
+                                console.log(finalOrder);
+                            } 
+                        })
+                    }else {
+                        found.size = e.target.value
+                        console.log(finalOrder);
+                    }
+                    
+                } else {
+                    bracket.forEach(item => {
+                        if (e.target.id === item._id) {
+                            setFinalOrder([{
+                                ...finalOrder,
+                                    _id: item._id,
+                                    name: item.name,
+                                    size: e.target.value,
+                                    quantity: ""
+                            }])
+                            console.log(finalOrder);
+                        }
+                    })
+                }
+
             }
-            const minusS = () => {
-                setSizes({...sizes, s: sizes.s -1 })
-            }
-            const addM = () => {
-                setSizes({...sizes, m: sizes.m +1 })
-            }
-            const minusM = () => {
-                setSizes({...sizes, m: sizes.m -1 })
-            }
-            const addL = () => {
-                setSizes({...sizes, l: sizes.l +1 })
-            }
-            const minusL = () => {
-                setSizes({...sizes, l: sizes.l -1 })
-            }
-            const addXL = () => {
-                setSizes({...sizes, xl: sizes.xl +1 })
-            }
-            const minusXL = () => {
-                setSizes({...sizes, xl: sizes.xl -1 })
+            const quantityEvent = (e) => {
+                console.log(e.target.id);
+                if (finalOrder.length > 0 ) {
+                    const found = finalOrder.find(target => target._id === e.target.id)
+                    console.log(found);
+                    if (found === undefined) {
+                        bracket.forEach(item => {
+                            if (e.target.id === item._id) {
+                                setFinalOrder([
+                                    ...finalOrder,{
+                                        _id: item._id,
+                                        name: item.name,
+                                        size: "",
+                                        quantity: e.target.value}
+                                ])
+                                console.log(finalOrder);
+                            } 
+                        })
+                    }else {
+                        found.quantity = e.target.value
+                        console.log(finalOrder);
+                    }
+                    
+                } else {
+                    bracket.forEach(item => {
+                        if (e.target.id === item._id) {
+                            setFinalOrder([{
+                                ...finalOrder,
+                                    _id: item._id,
+                                    name: item.name,
+                                    size: "",
+                                    quantity: e.target.value
+                            }])
+                            console.log(finalOrder);
+                        }
+                    })
+                }
             }
 
-            Order = {
-                _id: details._id,
-                name: details.name,
-                s: sizes.s,
-                m: sizes.m,
-                l: sizes.l,
-                xl: sizes.xl
-            }
+            const sizeLabel = ["S", "M", "L", "XL"]
+            const quantityLabel = ["1", "2", "3"]
+            const selectSizes = sizeLabel.map((sizes, i) => {
+                return (
+                    <option value={sizes} id={details._id} onClick={sizeEvent}>{sizes}</option>
+                )
+            })
+            const selectQuantity = quantityLabel.map((quantity, i) => {
+                return (
+                    <option value={quantity} id={details._id} onClick={quantityEvent}> {quantity} </option>
+                )
+            })
+
             return (
 
-                <div className="bracketArticles">
+                <div className="bracketArticles" >
                     <div className="bracketArticlesViews">
                         <img src={details.image} alt="articles" />
                     </div>
                     <div className="bracketSpacing">
                         <div className="bracketTitle">
                             <p>{details.name}</p>
-                            <button value={details._id} onClick={addS}>+</button>
-                            <p>S: {sizes.s}</p>
-                            <button value={details._id} onClick={minusS}> - </button>
-                            <button value={details._id} onClick={addM}>+</button>
-                            <p>M: {sizes.m}</p>
-                            <button value={details._id} onClick={minusM}> - </button>
-                            <button value={details._id} onClick={addL}>+</button>
-                            <p>L: {sizes.l}</p>
-                            <button value={details._id} onClick={minusL}> - </button>
-                            <button value={details._id} onClick={addXL}>+</button>
-                            <p>XL: {sizes.xl}</p>
-                            <button value={details._id} onClick={minusXL}> - </button>
+                            <select name="size">
+                                {selectSizes}
+                            </select>
+                            <select>
+                                {selectQuantity}
+                            </select>
+
                             <button>Remove</button>
                             <div className="bracketQuantityFunction">
                                 <p>-</p>
@@ -103,10 +151,8 @@ export default function Bracket() {
     }
 
     useEffect(() => {
-        items();
-        order();
         Amount();
-        console.log(Order);
+        items();
     })
     return (
         <div className="bracketContainer">
