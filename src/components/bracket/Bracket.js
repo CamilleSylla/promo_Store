@@ -1,28 +1,49 @@
 import React, { useContext, useEffect, useState } from 'react'
-
+import axios from 'axios';
 import './Bracket.css';
 
 import { IsLoggedContext } from '../../context/IsLogged';
 import { BracketContext } from '../../context/BrackContext'
 import Paypal from '../Paypal/Paypal';
+import { UserContext } from '../../context/UserContext';
+
 export default function Bracket() {
     const [log, setLog] = useContext(IsLoggedContext);
     const [bracket, setBracket] = useContext(BracketContext)
+    const [user, setUser] = useContext(UserContext)
     const [finalOrder, setFinalOrder] = useState([])
 
 
     const Amount = () => {
         return bracket.reduce((acc, obj) => acc + obj.price, 0)
     }
-
-
+    function verifyOrder () {
+        console.log(user);
+        const Order = {
+            last_name: user.last_name ,
+            first_name: user.first_name,
+            client_id: user._id,
+            email: user.email,
+            adresse: user.adresse,
+            city: user.city,
+            articles: finalOrder,
+            total: Amount()
+        }
+        console.log(Order);
+    axios.patch(`/api/produit/stock`, Order).then(res => {
+         if (res.data === true) {
+            axios.post(`/api/newOrders`, Order).then(res => {
+                console.log(res);
+            })
+        }
+    })
+    }
+    console.log(finalOrder);
     function items() {
         return bracket.map((details, i) => {
             const sizeEvent = (e) => {
-                console.log(e.target.id);
                 if (finalOrder.length > 0 ) {
                     const found = finalOrder.find(target => target._id === e.target.id)
-                    console.log(found);
                     if (found === undefined) {
                         bracket.forEach(item => {
                             if (e.target.id === item._id) {
@@ -30,15 +51,14 @@ export default function Bracket() {
                                     ...finalOrder,{
                                         _id: item._id,
                                         name: item.name,
-                                        size: e.target.value,
+                                        image: item.image,
+                                        size: e.target.value.toLowerCase(),
                                         quantity: ""}
                                 ])
-                                console.log(finalOrder);
                             } 
                         })
                     }else {
-                        found.size = e.target.value
-                        console.log(finalOrder);
+                        found.size = e.target.value.toLowerCase()
                     }
                     
                 } else {
@@ -48,36 +68,34 @@ export default function Bracket() {
                                 ...finalOrder,
                                     _id: item._id,
                                     name: item.name,
-                                    size: e.target.value,
+                                    image: item.image,
+                                    size: e.target.value.toLowerCase(),
                                     quantity: ""
                             }])
-                            console.log(finalOrder);
                         }
                     })
                 }
-
             }
+
             const quantityEvent = (e) => {
                 console.log(e.target.id);
                 if (finalOrder.length > 0 ) {
                     const found = finalOrder.find(target => target._id === e.target.id)
-                    console.log(found);
                     if (found === undefined) {
                         bracket.forEach(item => {
                             if (e.target.id === item._id) {
                                 setFinalOrder([
                                     ...finalOrder,{
                                         _id: item._id,
+                                        image: item.image,
                                         name: item.name,
                                         size: "",
-                                        quantity: e.target.value}
+                                        quantity: e.target.value.toLowerCase()}
                                 ])
-                                console.log(finalOrder);
                             } 
                         })
                     }else {
-                        found.quantity = e.target.value
-                        console.log(finalOrder);
+                        found.quantity = e.target.value.toLowerCase()
                     }
                     
                 } else {
@@ -86,11 +104,11 @@ export default function Bracket() {
                             setFinalOrder([{
                                 ...finalOrder,
                                     _id: item._id,
+                                    image: item.image,
                                     name: item.name,
                                     size: "",
-                                    quantity: e.target.value
+                                    quantity: e.target.value.toLowerCase()
                             }])
-                            console.log(finalOrder);
                         }
                     })
                 }
@@ -173,6 +191,7 @@ export default function Bracket() {
                         </div>
                         <div className="bracketPaypal">
                             <Paypal price={Amount} />
+                            <button onClick={verifyOrder}>Verify</button>
                         </div >
                     </div>
                 </div>
