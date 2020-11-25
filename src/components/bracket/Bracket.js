@@ -12,10 +12,16 @@ export default function Bracket() {
     const [bracket, setBracket] = useContext(BracketContext)
     const [user, setUser] = useContext(UserContext)
     const [finalOrder, setFinalOrder] = useState([])
+    
 
 
     const Amount = () => {
-        return bracket.reduce((acc, obj) => acc + obj.price, 0)
+        const amount = finalOrder.map(quantity => {
+            return bracket.reduce((acc, obj) => acc + obj.price*quantity.quantity, 0)
+        })
+        const round = Math.round(amount[0] * 100) / 100
+        return round
+        
     }
     function verifyOrder () {
         console.log(user);
@@ -39,6 +45,7 @@ export default function Bracket() {
     })
     }
     console.log(finalOrder);
+
     function items() {
         return bracket.map((details, i) => {
             const sizeEvent = (e) => {
@@ -113,8 +120,7 @@ export default function Bracket() {
                     })
                 }
             }
-
-            const sizeLabel = ["S", "M", "L", "XL"]
+            const sizeLabel = ["s", "m", "l", "xl", "unique"]
             const quantityLabel = ["1", "2", "3"]
             const selectSizes = sizeLabel.map((sizes, i) => {
                 return (
@@ -163,6 +169,7 @@ export default function Bracket() {
                 <div>
                     <p>{details.name}</p>
                     <p>{details.price} €</p>
+                    
                 </div>
             )
         })
