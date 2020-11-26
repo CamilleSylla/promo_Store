@@ -7,11 +7,8 @@ import Views from './Views';
 
 export default function Shop() {
     const [items, setItems] = useContext(ItemContext);
-    const [views, setViews] = useState([])
-    const [brand, setBrand] = useState([])
-    const [filterObj, setFilterObj ] = useState({
-    })
-    const filter = items
+    const [filterObj, setFilterObj ] = useState({})
+    
     function find() {
         let selectedData = [...items]
         if (Object.keys(filterObj).length <= 0 ) {
@@ -22,12 +19,11 @@ export default function Shop() {
               }
             }
             return selectedData
-        
-        
     }
+
     const genre = items.map(a => a.gender.toLowerCase());
     const genderFilter = ([...new Set(genre)]);
-    
+
     return (
         <div className="shopContainer">
             <div className="shopGrid">

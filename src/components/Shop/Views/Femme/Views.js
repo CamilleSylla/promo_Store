@@ -25,7 +25,6 @@ export default function Views({ item, filtered }) {
                 {filtered.map((details, i) => {
                     return (
                         <div className="shopItemContainer" >
-
                             <div className="shopItemImg">
                                 <img src={details.image} alt={details.name} />
                             </div>

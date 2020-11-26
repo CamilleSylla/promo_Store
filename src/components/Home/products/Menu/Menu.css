@@ -21,7 +21,9 @@
     margin-top: 5%;
 }
 
-.productMenu li {
+.productMenu input {
     cursor: pointer;
     font-size: 1vw;
+    background-color: transparent;
+    border: none;
 }

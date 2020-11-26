@@ -2,7 +2,9 @@
     display: grid;
     width: 60%;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 3%;
+    grid-template-rows: minmax(50vh, 60vh);
+    column-gap: 1%;
+    object-fit: contain;
 }
 .itemImgWrap {
     width: 100%;
@@ -11,7 +13,15 @@
     position: relative;
 }
 .productItem img{
-    max-width: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.details {
+    display: grid;
+    grid-template-columns: 7fr 1fr;
+}
+.detailsinfos {
+    text-overflow: ellipsis;
 }
 .detailsName {
     font-size: 1vw;
@@ -23,4 +33,7 @@
 .gender {
     font-size: 0.8vw;
     font-weight: 300;
+}
+.shopItemLink input{
+    max-width: 100%;
 }
