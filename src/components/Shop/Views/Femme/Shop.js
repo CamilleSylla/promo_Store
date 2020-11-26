@@ -8,42 +8,43 @@ import Views from './Views';
 export default function Shop() {
     const [items, setItems] = useContext(ItemContext);
     const [views, setViews] = useState([])
-    const [gender, setGender] = useState([])
     const [brand, setBrand] = useState([])
+    const [filterObj, setFilterObj ] = useState({
+    })
     const filter = items
-
-    
-
-    const cat = items.map(a => a.category.toLowerCase());
-    const categoryFilter = ([...new Set(cat)]);
+    function find() {
+        let selectedData = [...items]
+        if (Object.keys(filterObj).length <= 0 ) {
+            selectedData = items
+        } else {
+            for (const property in filterObj) {
+                selectedData = selectedData.filter(o => o[property].toLowerCase() === filterObj[property].toLowerCase());
+              }
+            }
+            return selectedData
+        
+        
+    }
     const genre = items.map(a => a.gender.toLowerCase());
     const genderFilter = ([...new Set(genre)]);
-    const brands =  items.map(a => a.brand.toLowerCase());
-    const brandsFilter = ([...new Set(brands)]);
-
+    
     return (
         <div className="shopContainer">
             <div className="shopGrid">
             <GenderNav 
             gender={genderFilter} 
-            filter={filter} 
-            setViews={setViews}
-            genderTarget={gender}
-            setGender={setGender}
+            filterObj={filterObj}
+            setFilterObj = {setFilterObj}
             />
             </div>
             
             <div className="shopGrid">
                 <ShopNav 
-                cat={categoryFilter} 
-                filter={filter} 
-                setViews={setViews} 
-                genderTarget={gender}
-                brand={brandsFilter}
-                Brand={brand}
-                setBrand={setBrand}
+                filterObj={filterObj}
+                filtered={find()}
+                setFilterObj = {setFilterObj}
                 />
-                <Views item={items} filtered={views}/>
+                <Views item={items} filtered={find()}/>
             </div>
         </div>
     )

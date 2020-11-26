@@ -2,24 +2,18 @@ import React from 'react';
 
 import './Gender.css'
 
-export default function GenderNav({ gender, setGender, filter, setViews, genderTarget , setBrand, Brand }) {
-    console.log(filter);
+export default function GenderNav({ gender, filterObj, setFilterObj }) {
     const Gender = (e) => {
-        if (genderTarget.target === e.target.value) {
-            console.log(genderTarget);
+        if (filterObj.gender === e.target.value) {
+            delete filterObj.gender
         }else {
-            const stuff = filter.filter((i) => {
-                return i.gender.toLowerCase().match(e.target.value.toLowerCase())
-            })
-            setViews(stuff)
-            setGender({...genderTarget, target: e.target.value})
-            console.log(genderTarget);
+            setFilterObj({...filterObj, gender: e.target.value})
+            console.log(filterObj);
         }
 
     }
     const Reset = (e) => {
-        setGender(e.target.value)
-        setViews(filter)
+        setFilterObj({})
     }
     return (
         <div className="genderNavContainer">
