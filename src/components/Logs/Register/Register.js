@@ -41,7 +41,7 @@ export default function Register() {
 
 
     const onSubmit = () => {
-        axios.post(`/api/user/register`, register)
+        axios.post(`https://iconic-store-serv.herokuapp.com/api/user/register`, register)
             .then(res => {
                 console.log(register);
                 console.log(res.data);

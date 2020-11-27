@@ -36,7 +36,7 @@ export default function Bracket() {
             total: Amount()
         }
         console.log(Order);
-    axios.patch(`/api/produit/stock`, Order).then(res => {
+    axios.patch(`https://iconic-store-serv.herokuapp.com/api/produit/stock`, Order).then(res => {
          if (res.data === true) {
             axios.post(`/api/newOrders`, Order).then(res => {
                 console.log(res);

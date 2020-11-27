@@ -8,7 +8,6 @@ import './Nav.css'
 import ID from '../../../assets/Logos/IconicDevLatest.svg'
 import Cart from '../../../assets/Icons/cart.svg'
 import Man from '../../../assets/Icons/man.svg'
-import Search from '../../../assets/Icons/search.svg'
 import { Link, NavLink } from 'react-router-dom';
 import { IsLoggedContext } from '../../../context/IsLogged';
 import { UserContext } from '../../../context/UserContext';

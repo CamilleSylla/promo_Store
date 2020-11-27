@@ -40,3 +40,6 @@
 .shopItemOverview input{
     max-width: 100%;
 }
+.price {
+    font-size: 1.2vw;
+}

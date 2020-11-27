@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { ItemContext } from '../../../../context/ItemContext';
 import ShopNav from '../../Nav/Nav';
-import GenderNav from './Gender/Gender';
 import './Shop.css'
 import Views from './Views';
 
@@ -26,12 +25,8 @@ export default function Shop() {
 
     return (
         <div className="shopContainer">
-            <div className="shopGrid">
-            <GenderNav 
-            gender={genderFilter} 
-            filterObj={filterObj}
-            setFilterObj = {setFilterObj}
-            />
+            <div className="shopTopSpacing">
+                Il est l'heure d'alimenter votre style...
             </div>
             
             <div className="shopGrid">

@@ -26,7 +26,7 @@ export default function Login() {
 
 
     const onSubmit = () => {
-        axios.post(`/api/user/login`, login)
+        axios.post(`https://iconic-store-serv.herokuapp.com/api/user/login`, login)
             .then(async res => {
                 await setToken(res.headers.authtoken)
                  await setUser(res.data)

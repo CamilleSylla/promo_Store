@@ -20,3 +20,21 @@
     cursor: pointer;
     margin-bottom: 5%;
 }
+.shopNavFilter h2 {
+    font-size: 1.2vw;
+    margin-bottom: 1vh;
+    margin-top: 3vh;
+    letter-spacing: 0.3vw;
+    color: #A64521;
+}
+.shopNavFilter h3 {
+    font-size: 1vw;
+    font-weight: 200;
+    color: red;
+    cursor: pointer;
+    letter-spacing: 0.1vw;
+}
+.shopNavFilter button {
+    font-size: 0.9vw;
+    font-weight: 200;
+}

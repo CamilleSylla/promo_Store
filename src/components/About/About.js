@@ -34,7 +34,7 @@ export default function About() {
     }
 
     function Send() {
-        Axios.post(`/api/mail`, msg)
+        Axios.post(`https://iconic-store-serv.herokuapp.com/api/mail`, msg)
             .then(res => {
                 console.log(res);
             })

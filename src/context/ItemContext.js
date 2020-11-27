@@ -8,7 +8,7 @@ export function ItemProvider(props) {
 
     
     useEffect(() => {
-        Axios.get(`/api/publicItem`)
+        Axios.get(`https://iconic-store-serv.herokuapp.com/api/publicItem`)
     .then(res => {
         setItems(res.data);
     })

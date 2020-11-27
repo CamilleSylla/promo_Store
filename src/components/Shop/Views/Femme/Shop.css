@@ -6,3 +6,11 @@
     display: grid;
     grid-template-columns: 1fr 4fr;
 }
+.shopTopSpacing {
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vw;
+    text-transform: uppercase;
+}

@@ -1,5 +1,4 @@
-import React, { useContext, useState } from 'react';
-import { ItemContext } from '../../../context/ItemContext';
+import React from 'react';
 
 import "./Nav.css"
 
@@ -15,6 +14,16 @@ export default function ShopNav({ filterObj, filtered, setFilterObj }) {
         }
 
     }
+    const Genre = (e) => {
+        e.preventDefault();
+        if (filterObj.gender === e.target.value) {
+            delete filterObj.category
+        }else {
+            setFilterObj({...filterObj, gender: e.target.value})
+            console.log(filterObj);
+        }
+
+    }
     const Brand = (e) => {
         e.preventDefault();
         if (filterObj.brand === e.target.value) {
@@ -25,6 +34,9 @@ export default function ShopNav({ filterObj, filtered, setFilterObj }) {
         }
 
     }
+    function Delete () {
+        setFilterObj({})
+    }
     function showCategory() {
             const newCat = filtered.map(a => a.category.toLowerCase());
             const categoryFilter = ([...new Set(newCat)]);
@@ -34,6 +46,22 @@ export default function ShopNav({ filterObj, filtered, setFilterObj }) {
                     {categoryFilter.map((details, i) => {
                         return (
                             <button onClick={Category} value={details}>
+                                {details}
+                            </button>
+                        )
+                    })}
+                </div>
+            )
+    }
+    function showGenre() {
+            const genderCat = filtered.map(a => a.gender.toLowerCase());
+            const genderFilter = ([...new Set(genderCat)]);
+            genderFilter.sort();
+            return (
+                <div>
+                    {genderFilter.map((details, i) => {
+                        return (
+                            <button onClick={Genre} value={details}>
                                 {details}
                             </button>
                         )
@@ -57,11 +85,18 @@ export default function ShopNav({ filterObj, filtered, setFilterObj }) {
                 </div>
             )
     }
-   
+   function showDelete ()  {
+    if (Object.keys(filterObj).length > 0 ) {
+            return <h3 onClick={() => Delete()}>supprimer les filtres</h3>
+    }
+   }
     return (
         <div className="shopNavContainer">
 
             <div className="shopNavFilter">
+                {showDelete()}
+                <h2>Sexe</h2>
+                {showGenre()}
                 <h2>Categories</h2>
                 {showCategory()}
                 <h2>Marques</h2>
