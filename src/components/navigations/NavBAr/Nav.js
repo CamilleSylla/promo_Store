@@ -25,7 +25,49 @@ export default function Nav() {
     function connected() {
         if (log === true) {
             return (
-                <li>{user.first_name + " " + user.last_name}</li>
+                <NavLink
+                    to="/user"
+                    activeStyle={{
+                        color: "red"
+                    }}
+                >
+                    {user.first_name + " " + user.last_name}
+                </NavLink>
+            )
+        } else {
+            return (
+                <NavLink
+                    to="/login"
+                    activeStyle={{
+                        color: "red"
+                    }}
+                >
+                    Connection
+                </NavLink>
+            )
+        }
+    }
+
+     const Deco = () => {
+         setLog({});
+         setUser({});
+     }
+
+    function RegiDec () {
+        if (log === true) {
+            return (
+                <li onClick={() => Deco()}>Déconnexion</li>
+            )
+        } else {
+            return (
+                <NavLink
+                    to="/login"
+                    activeStyle={{
+                        color: "red"
+                    }}
+                >
+                    Inscription
+                </NavLink>
             )
         }
     }
@@ -63,10 +105,10 @@ export default function Nav() {
                 </NavLink>
 
                 {connected()}
+                {RegiDec()}
             </ul>
             <div className="nav-icons">
 
-                <img src={Search} alt="icons" />
                 <Link to='/user'>
                     <img src={Man} alt="icons" />
                 </Link>

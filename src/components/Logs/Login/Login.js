@@ -39,7 +39,6 @@ export default function Login() {
             })
     }
 
-
     return (
         <div className="loginOverlay">
             <div className="loginContainer">
@@ -51,16 +50,17 @@ export default function Login() {
                         <div className="loginFormContainer">
                             <h3> Connection </h3>
                             <p>Email</p>
-                            <input className="loginField" onChange={emailChange} />
+                            <input type="email" className="loginField" onChange={emailChange} />
 
                             <p>Mot de Passe</p>
-                            <input className="loginField" onChange={passwordChange} />
+                            <input type="password" className="loginField" onChange={passwordChange} />
                             <Link to="/" >
                                 <input 
                                 className="loginConnection" 
                                 type="button" 
                                 onClick={onSubmit} 
-                                value="Connection"/>
+                                value="Connection"
+                                />
                             </Link>
 
                             <Link to="/register" className="noAccount">

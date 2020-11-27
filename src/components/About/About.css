@@ -2,6 +2,13 @@
     margin: 0 auto;
     width: 93%;
 }
+
+.aboutContainer p {
+    font-size: 1.2vw;
+}
+.aboutMiddleware p {
+    font-size: 1.1vw;
+}
 .aboutTitle {
     display: flex;
     flex-direction: column;
@@ -12,8 +19,12 @@
     display: flex;
     align-items: center;
     height: 25vh;
+    font-size: 2.2vw;
     text-align: center;
     width: 50%;
+}
+.aboutTitle p {
+    font-size: 1vw;
 }
 .aboutTitle p:nth-of-type(2) {
     width: 40%;
@@ -44,6 +55,12 @@
     display: flex;
     justify-content: end;
     align-items: flex-end;
+}
+.aboutDescContainer h4{
+    font-size: 1.2vw;
+}
+.aboutDescContainer p{
+    font-size: 1vw;
 }
 .aboutMiddleware{
     margin-top: 20vh;
@@ -144,6 +161,7 @@
 }
 .aboutLabels2 textarea{
     height: 20vh;
+    width: 30vw;
     border: none;
     background-color: transparent;
     border-bottom: 1px solid black;

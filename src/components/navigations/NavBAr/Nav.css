@@ -27,6 +27,8 @@
     text-align: right;
     font-weight: 500;
     font-size: 0.8vw;
+    cursor: pointer;
+    color: red;
 }
 
 #topnav  ul a {
@@ -36,6 +38,17 @@
     font-size: 1vw;
     color: black;
     font-weight: 200;
+    letter-spacing: 0.1vw;
+    transition: all ease-in-out 0.3s;
+}
+#topnav ul p {
+    text-decoration: none;
+    font-weight: bold;
+    list-style: none;
+    font-size: 1vw;
+    color: black;
+    font-weight: 200;
+    letter-spacing: 0.1vw;
     transition: all ease-in-out 0.3s;
 }
 
